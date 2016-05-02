@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>JS Interview Challenge</title>
-  </head>
-  <body>
-<!-- 1 As a user, I would like to have an application that shows a table of information.  -->
-<!-- 2 When the user loads the page, they should see a table presented.  -->
-<!-- 3 The application should return data from http://jsonplaceholder.typicode.com/posts  -->
-<!-- 4 When the user clicks on the header of a table column, it should sort the table.  -->
-<!-- 5 When completed, submit your code to GitHub and send us a link to your solution! -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <title>This here</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" media="screen" title="no title" charset="utf-8">
+  <style media="screen">
+th {
+  font : 17px univers;
+  text-transform: uppercase;
+
+}
+  </style>
+</head>
+
+<body id="home">
+  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js">
+  </script>
+  <!-- <button type="button" onclick="document.getElementById('example').style.color = getRandomColor()">
+    Random Table Font Color</button> -->
+  <table id="example" class="display" cellspacing="0" width="100%">
+    <thead>
+      <tr>
+        <th>userId</th>
+        <th>id</th>
+        <th>title</th>
+        <th>body</th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>userId</th>
+        <th>id</th>
+        <th>title</th>
+        <th>body</th>
+      </tr>
+    </tfoot>
+    <tbody>
+    </tbody>
+  </table>
+
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      document.getElementById("example").style.color = getRandomColor();
+      $('#example').DataTable({
+        "ajax": {
+          url: "http://jsonplaceholder.typicode.com/posts/",
+          dataSrc: ''
+        },
+        "columns": [{
+          "data": "userId"
+        }, {
+          "data": "id"
+        }, {
+          "data": "title"
+        }, {
+          "data": "body"
+        }]
+      });
+    });
+
+    function getRandomColor() {
+      var letters = '0123456789ABCDEF'.split('');
+      var color = '#';
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+      console.log(color);
+    }
+    getRandomColor('#example');
+
+    window.onclick = seizure;
+
+    function seizure() {
+      document.getElementById("example").style.color = getRandomColor();
+      console.log()
+    }
+  </script>
+</body>
+
 </html>
