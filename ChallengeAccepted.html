@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
-  <title>This here</title>
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" media="screen" title="no title" charset="utf-8">
+  <title>Challenge Accepted</title>
+  <link rel="stylesheet"
+  href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css"
+  media="screen"
+  title="no title"
+  charset="utf-8">
   <style media="screen">
-th {
-  font : 17px univers;
-  text-transform: uppercase;
-
-}
+    th {
+      font: 17px univers;
+      text-transform: uppercase;
+    }
   </style>
-</head>
-
-<body id="home">
-  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4="
+  crossorigin="anonymous">
+  </script>
   <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js">
   </script>
+</head>
+<body id="home">
   <!-- <button type="button" onclick="document.getElementById('example').style.color = getRandomColor()">
     Random Table Font Color</button> -->
+    <!-- Mars Martian was here. -->
   <table id="example" class="display" cellspacing="0" width="100%">
     <thead>
       <tr>
@@ -41,10 +45,9 @@ th {
     </tbody>
   </table>
 
-
   <script type="text/javascript">
     $(document).ready(function() {
-      document.getElementById("example").style.color = getRandomColor();
+      // document.getElementById("example").style.color = getRandomColor();
       $('#example').DataTable({
         "ajax": {
           url: "http://jsonplaceholder.typicode.com/posts/",
@@ -69,17 +72,14 @@ th {
         color += letters[Math.floor(Math.random() * 16)];
       }
       return color;
-      console.log(color);
     }
-    getRandomColor('#example');
-
-    window.onclick = seizure;
+    getRandomColor();
 
     function seizure() {
       document.getElementById("example").style.color = getRandomColor();
-      console.log()
+      console.log(getRandomColor());
     }
+    window.onclick = seizure;
   </script>
 </body>
-
 </html>
